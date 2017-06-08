@@ -70,3 +70,23 @@ Spring底层借助了 **AOP机制** 将DataSourceTransactionManager作用到业务方法上去。
 - <bean>定义DataSourceTransactionManager
 - 开启@Transactional注解<tx:annotation-driven transaction-manager="txManager" />
 - 在业务组件类前或方法前使用@Transactional
+
+# 隔离特性isolation
+
+一般采用默认隔离级别，级别为READ_COMMITED 产生原因是因为：事务的并发，
+（两段数据库操作代码并发，容易产生脏读，幻读，更新丢失等问题）
+
+解决方案就是采用隔离级别设置，将两个事务操作代码隔离开。
+
+@Transactional提供事务隔离级别
+
+@Transactional(isolation=Isolation.***)
+
+- READ_UNCOMMITTED 读未提交
+- READ_COMMITTED 读已提交
+- REPEATABLE_READ 可重复读
+- SERIALIZABLE 序列化操作（排队操作）
+
+级别越高安全性越好，但是并发处理能力越低。
+
+（乐观锁/悲观锁）
