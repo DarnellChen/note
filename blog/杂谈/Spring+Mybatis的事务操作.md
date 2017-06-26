@@ -1,54 +1,54 @@
-# Spring + Mybatis ÊÂÎñ²Ù×÷
+# Spring + Mybatis äº‹åŠ¡æ“ä½œ
 
-Ö÷ÒªÊÇÕë¶ÔÔöÉ¾¸ÄµÄÊý¾ÝÐÞ¸Ä²Ù×÷
+ä¸»è¦æ˜¯é’ˆå¯¹å¢žåˆ æ”¹çš„æ•°æ®ä¿®æ”¹æ“ä½œ
 
-ÐèÒª±£Ö¤Á½¸ö¼°ÒÔÉÏµÄsql½øÐÐ²Ù×÷¶¼ÄÜ³É¹¦
+éœ€è¦ä¿è¯ä¸¤ä¸ªåŠä»¥ä¸Šçš„sqlè¿›è¡Œæ“ä½œéƒ½èƒ½æˆåŠŸ
 
-## ×÷ÓÃ
+## ä½œç”¨
 
-±£ÕÏÒ»×éÊý¾Ý¿âSQL²Ù×÷µÄÍêÕûÐÔ¡£
+ä¿éšœä¸€ç»„æ•°æ®åº“SQLæ“ä½œçš„å®Œæ•´æ€§ã€‚
 
-## ÏîÄ¿ÖÐµÄÊÂÎñ
+## é¡¹ç›®ä¸­çš„äº‹åŠ¡
 
-Ä¬ÈÏÃ¿¸öDao·½·¨¶¼ÊÇÒ»¸ö¶ÀÁ¢ÊÂÎñ£¬Èç¹ûService·½·¨Ê¹ÓÃÁ½¸öDao·½·¨´¦Àí£¬ÎÞ·¨±£ÕÏService·½·¨µÄÍêÕûÐÔ¡£
+é»˜è®¤æ¯ä¸ªDaoæ–¹æ³•éƒ½æ˜¯ä¸€ä¸ªç‹¬ç«‹äº‹åŠ¡ï¼Œå¦‚æžœServiceæ–¹æ³•ä½¿ç”¨ä¸¤ä¸ªDaoæ–¹æ³•å¤„ç†ï¼Œæ— æ³•ä¿éšœServiceæ–¹æ³•çš„å®Œæ•´æ€§ã€‚
 
 
-## ÊµÏÖ
+## å®žçŽ°
 	
-	//Í¨³£½á¹¹
-	//²ÉÓÃÊÂÎñ£¬±£Ö¤service´¦ÀíÍêÕûÐÔ
+	//é€šå¸¸ç»“æž„
+	//é‡‡ç”¨äº‹åŠ¡ï¼Œä¿è¯serviceå¤„ç†å®Œæ•´æ€§
 	public void service(){
 		try{
-			//¿ªÆôÊÂÎñ
-			/*¶à¸öDao·½·¨*/
+			//å¼€å¯äº‹åŠ¡
+			/*å¤šä¸ªDaoæ–¹æ³•*/
 			Service.shareNote()
-			//Ìá½»ÊÂÎñ
+			//æäº¤äº‹åŠ¡
 		}catch(){
-			//Òì³£»Ø¹öÊÂÎñ
+			//å¼‚å¸¸å›žæ»šäº‹åŠ¡
 		}
 	}
 	
 	
-###	springÊÂÎñ´¦Àí
+###	springäº‹åŠ¡å¤„ç†
 
-SpringÌá¹©ÁËÊÂÎñ¹ÜÀíµÄ·â×°£¬²»Í¬¼¼ÊõÌá¹©µÄ·â×°×é¼þ²»Í¬£¬ÀýÈçJDBCºÍMyBatis²ÉÓÃDataSourceTransactionManager×é¼þ·â×°ÁËÊÂÎñcommitºÍ²¶»ñÒì³£ºórollback¡£
-Springµ×²ã½èÖúÁË **AOP»úÖÆ** ½«DataSourceTransactionManager×÷ÓÃµ½ÒµÎñ·½·¨ÉÏÈ¥¡£
-£¨»ùÓÚÅäÖÃ·½Ê½£©
+Springæä¾›äº†äº‹åŠ¡ç®¡ç†çš„å°è£…ï¼Œä¸åŒæŠ€æœ¯æä¾›çš„å°è£…ç»„ä»¶ä¸åŒï¼Œä¾‹å¦‚JDBCå’ŒMyBatisé‡‡ç”¨DataSourceTransactionManagerç»„ä»¶å°è£…äº†äº‹åŠ¡commitå’Œæ•èŽ·å¼‚å¸¸åŽrollbackã€‚
+Springåº•å±‚å€ŸåŠ©äº† **AOPæœºåˆ¶** å°†DataSourceTransactionManagerä½œç”¨åˆ°ä¸šåŠ¡æ–¹æ³•ä¸ŠåŽ»ã€‚
+ï¼ˆåŸºäºŽé…ç½®æ–¹å¼ï¼‰
 
-´´½¨ÅäÖÃÎÄ¼þtransaction.xml
+åˆ›å»ºé…ç½®æ–‡ä»¶transaction.xml
 	
-	/*xmlÉùÃ÷¶¨ÒåÍ¬MyBatis*/
-	<!-- 1¡¢¶¨ÒåÊÂÎñ¹ÜÀíBean-->
+	/*xmlå£°æ˜Žå®šä¹‰åŒMyBatis*/
+	<!-- 1ã€å®šä¹‰äº‹åŠ¡ç®¡ç†Bean-->
 	<bean id = "txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name = "dataSource" ref = "×Ô¶¨ÒåµÄdbcp×é¼þDataSourceµÄidÃû">
+		<property name = "dataSource" ref = "è‡ªå®šä¹‰çš„dbcpç»„ä»¶DataSourceçš„idå">
 		</property>
 	</bean>
 	
-	<!-- 2¡¢Í¨¹ýÅäÖÃ½«txManager×÷ÓÃµ½Service·½·¨ÉÏ -->
-	<!-- ¿ªÆô@Transactional ÊÂÎñ±ê¼Ç-->
+	<!-- 2ã€é€šè¿‡é…ç½®å°†txManagerä½œç”¨åˆ°Serviceæ–¹æ³•ä¸Š -->
+	<!-- å¼€å¯@Transactional äº‹åŠ¡æ ‡è®°-->
 	<tx:annotation-driven transaction-manager="txManager" />
 
-	<!-- 2µÄÁíÒ»ÖÖÊµÏÖ·½Ê½-->
+	<!-- 2çš„å¦ä¸€ç§å®žçŽ°æ–¹å¼-->
 	<tx:advice id="txAdvice" transaction-manager="txManager" >
 		<tx:attributes>
 			<tx:method name="faction*" read-only="true" />
@@ -57,36 +57,36 @@ Springµ×²ã½èÖúÁË **AOP»úÖÆ** ½«DataSourceTransactionManager×÷ÓÃµ½ÒµÎñ·½·¨ÉÏÈ¥¡£
 	</tx:advice>
 
 
-ÔÚserviceÀà/·½·¨Ç°ÉÏ
+åœ¨serviceç±»/æ–¹æ³•å‰ä¸Š
 
-	//´ø¸Ã±ê¼ÇµÄ·½·¨£¬»á²ÉÓÃDataSourceTransactionManager¿ØÖÆÊÂÎñ
+	//å¸¦è¯¥æ ‡è®°çš„æ–¹æ³•ï¼Œä¼šé‡‡ç”¨DataSourceTransactionManageræŽ§åˆ¶äº‹åŠ¡
 	@Transactional
 	public void serviceClass{
 	
 	}
 
-## ×Ü½á
+## æ€»ç»“
 
-- <bean>¶¨ÒåDataSourceTransactionManager
-- ¿ªÆô@Transactional×¢½â<tx:annotation-driven transaction-manager="txManager" />
-- ÔÚÒµÎñ×é¼þÀàÇ°»ò·½·¨Ç°Ê¹ÓÃ@Transactional
+- <bean>å®šä¹‰DataSourceTransactionManager
+- å¼€å¯@Transactionalæ³¨è§£<tx:annotation-driven transaction-manager="txManager" />
+- åœ¨ä¸šåŠ¡ç»„ä»¶ç±»å‰æˆ–æ–¹æ³•å‰ä½¿ç”¨@Transactional
 
-# ¸ôÀëÌØÐÔisolation
+# éš”ç¦»ç‰¹æ€§isolation
 
-Ò»°ã²ÉÓÃÄ¬ÈÏ¸ôÀë¼¶±ð£¬¼¶±ðÎªREAD_COMMITED ²úÉúÔ­ÒòÊÇÒòÎª£ºÊÂÎñµÄ²¢·¢£¬
-£¨Á½¶ÎÊý¾Ý¿â²Ù×÷´úÂë²¢·¢£¬ÈÝÒ×²úÉúÔà¶Á£¬»Ã¶Á£¬¸üÐÂ¶ªÊ§µÈÎÊÌâ£©
+ä¸€èˆ¬é‡‡ç”¨é»˜è®¤éš”ç¦»çº§åˆ«ï¼Œçº§åˆ«ä¸ºREAD_COMMITED äº§ç”ŸåŽŸå› æ˜¯å› ä¸ºï¼šäº‹åŠ¡çš„å¹¶å‘ï¼Œ
+ï¼ˆä¸¤æ®µæ•°æ®åº“æ“ä½œä»£ç å¹¶å‘ï¼Œå®¹æ˜“äº§ç”Ÿè„è¯»ï¼Œå¹»è¯»ï¼Œæ›´æ–°ä¸¢å¤±ç­‰é—®é¢˜ï¼‰
 
-½â¾ö·½°¸¾ÍÊÇ²ÉÓÃ¸ôÀë¼¶±ðÉèÖÃ£¬½«Á½¸öÊÂÎñ²Ù×÷´úÂë¸ôÀë¿ª¡£
+è§£å†³æ–¹æ¡ˆå°±æ˜¯é‡‡ç”¨éš”ç¦»çº§åˆ«è®¾ç½®ï¼Œå°†ä¸¤ä¸ªäº‹åŠ¡æ“ä½œä»£ç éš”ç¦»å¼€ã€‚
 
-@TransactionalÌá¹©ÊÂÎñ¸ôÀë¼¶±ð
+@Transactionalæä¾›äº‹åŠ¡éš”ç¦»çº§åˆ«
 
 @Transactional(isolation=Isolation.***)
 
-- READ_UNCOMMITTED ¶ÁÎ´Ìá½»
-- READ_COMMITTED ¶ÁÒÑÌá½»
-- REPEATABLE_READ ¿ÉÖØ¸´¶Á
-- SERIALIZABLE ÐòÁÐ»¯²Ù×÷£¨ÅÅ¶Ó²Ù×÷£©
+- READ_UNCOMMITTED è¯»æœªæäº¤
+- READ_COMMITTED è¯»å·²æäº¤
+- REPEATABLE_READ å¯é‡å¤è¯»
+- SERIALIZABLE åºåˆ—åŒ–æ“ä½œï¼ˆæŽ’é˜Ÿæ“ä½œï¼‰
 
-¼¶±ðÔ½¸ß°²È«ÐÔÔ½ºÃ£¬µ«ÊÇ²¢·¢´¦ÀíÄÜÁ¦Ô½µÍ¡£
+çº§åˆ«è¶Šé«˜å®‰å…¨æ€§è¶Šå¥½ï¼Œä½†æ˜¯å¹¶å‘å¤„ç†èƒ½åŠ›è¶Šä½Žã€‚
 
-£¨ÀÖ¹ÛËø/±¯¹ÛËø£©
+ï¼ˆä¹è§‚é”/æ‚²è§‚é”ï¼‰

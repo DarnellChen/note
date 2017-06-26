@@ -1,70 +1,70 @@
 # Spring AOP
 
-## AOP¸ÅÄî
+## AOPæ¦‚å¿µ
 
-Aspect Oriented Programming£¨AOP£©
+Aspect Oriented Programmingï¼ˆAOPï¼‰
 
-ÃæÏòÇÐÃæ±à³Ì£¨¹²Í¬ÒµÎñ´¦Àí£¬¿ÉÒÔÔÚ²»ÓÃÐÞ¸ÄÔ­ÓÐ×é¼þÂß¼­´úÂëÇé¿öÏÂÍ¨¹ýÅäÖÃ×·¼ÓÐÂµÄ´¦Àí¹¦ÄÜ£©
+é¢å‘åˆ‡é¢ç¼–ç¨‹ï¼ˆå…±åŒä¸šåŠ¡å¤„ç†ï¼Œå¯ä»¥åœ¨ä¸ç”¨ä¿®æ”¹åŽŸæœ‰ç»„ä»¶é€»è¾‘ä»£ç æƒ…å†µä¸‹é€šè¿‡é…ç½®è¿½åŠ æ–°çš„å¤„ç†åŠŸèƒ½ï¼‰
 
-Object Oriented Programming£¨OOP£©
+Object Oriented Programmingï¼ˆOOPï¼‰
 
-ÃæÏò¶ÔÏó±à³Ì£¨¶ÔÏó·ÖÎöºÍÉè¼Æ£©
+é¢å‘å¯¹è±¡ç¼–ç¨‹ï¼ˆå¯¹è±¡åˆ†æžå’Œè®¾è®¡ï¼‰
 
-AOP¿ÉÄÜµÄÓ¦ÓÃ³¡¾°£º
-- ×·¼ÓÊÂÎñ¿ØÖÆ
-- ×·¼ÓÒì³£ÈÕÖ¾¼ÇÂ¼
+AOPå¯èƒ½çš„åº”ç”¨åœºæ™¯ï¼š
+- è¿½åŠ äº‹åŠ¡æŽ§åˆ¶
+- è¿½åŠ å¼‚å¸¸æ—¥å¿—è®°å½•
 
-## ÈëÃÅÊ¾Àý
-- ½«¹²Í¬µÄ´¦Àí·â×°³ÉÒ»¸ö×é¼þ
+## å…¥é—¨ç¤ºä¾‹
+- å°†å…±åŒçš„å¤„ç†å°è£…æˆä¸€ä¸ªç»„ä»¶
 
 	public class Bean{
 		public void faction(){
-			/*¹²Í¬´¦ÀíµÄÂß¼­´úÂë*/
+			/*å…±åŒå¤„ç†çš„é€»è¾‘ä»£ç */
 		}
 	}
 	
-- ×·¼ÓAOPÅäÖÃ£¬½«¹²Í¬×é¼þ×÷ÓÃµ½Ä¿±ê·½·¨ÉÏ
+- è¿½åŠ AOPé…ç½®ï¼Œå°†å…±åŒç»„ä»¶ä½œç”¨åˆ°ç›®æ ‡æ–¹æ³•ä¸Š
 
 	aop.xml:
 	
-	/*xmlÉùÃ÷¶¨ÒåÍ¬MyBatis*/
-	<!-- 1¡¢AOPÅäÖÃ£¬½«¹²Í¬´¦ÀíµÄ×é¼þ×÷ÓÃµ½ËùÓÐÄ¿±ê×é¼þµÄ·½·¨ÉÏ -->
-	<bean id="AOPID" class = "¹²Í¬´¦Àí×é¼þµÄ°üÃû.ÀàÃû" ></bean>
+	/*xmlå£°æ˜Žå®šä¹‰åŒMyBatis*/
+	<!-- 1ã€AOPé…ç½®ï¼Œå°†å…±åŒå¤„ç†çš„ç»„ä»¶ä½œç”¨åˆ°æ‰€æœ‰ç›®æ ‡ç»„ä»¶çš„æ–¹æ³•ä¸Š -->
+	<bean id="AOPID" class = "å…±åŒå¤„ç†ç»„ä»¶çš„åŒ…å.ç±»å" ></bean>
 	
 	<aop:config>
 		<aop:aspect ref="AOPID">
-			<aop:before method="¹²Í¬´¦Àí×é¼þÄÚ ÏëÔÚÄ¿±ê·½·¨Ö®Ç° µ÷ÓÃµÄ·½·¨" pointcut="within(ÀàÐÍ) ÇÐÈëµã£¬Ä¿±êµÄ·½·¨"/>
-			<!-- within ÖÐµÄÀàÐÍ¿ÉÒÔÌîÐ´°üÃû£ºÈçcn.clv.note.controller..* ×÷ÓÃ·¶Î§Îª¸Ã°ü¼°Æä×Ó°ü -->
+			<aop:before method="å…±åŒå¤„ç†ç»„ä»¶å†… æƒ³åœ¨ç›®æ ‡æ–¹æ³•ä¹‹å‰ è°ƒç”¨çš„æ–¹æ³•" pointcut="within(ç±»åž‹) åˆ‡å…¥ç‚¹ï¼Œç›®æ ‡çš„æ–¹æ³•"/>
+			<!-- within ä¸­çš„ç±»åž‹å¯ä»¥å¡«å†™åŒ…åï¼šå¦‚cn.clv.note.controller..* ä½œç”¨èŒƒå›´ä¸ºè¯¥åŒ…åŠå…¶å­åŒ… -->
 			<aop:after method=""/>
 		</aop:aspect>
 	</aop:config>
 	
 
-×¢½âµÄ·½·¨
+æ³¨è§£çš„æ–¹æ³•
 
-	aop.xml£º
+	aop.xmlï¼š
 	
-	/* xml ÉùÃ÷¶¨ÒåÍ¬MyBatis */
-	<!-- ×¢½âAOPÅäÖÃ -->
-	<context:component-scan base-package="¹²Í¬´¦ÀíµÄ°üÃû" />
-	<!-- ¿ªÆôAOP×¢½â±ê¼ÇµÄÊ¹ÓÃ£¬ÀýÈç@Aspect£¬@Before£¬@After -->
+	/* xml å£°æ˜Žå®šä¹‰åŒMyBatis */
+	<!-- æ³¨è§£AOPé…ç½® -->
+	<context:component-scan base-package="å…±åŒå¤„ç†çš„åŒ…å" />
+	<!-- å¼€å¯AOPæ³¨è§£æ ‡è®°çš„ä½¿ç”¨ï¼Œä¾‹å¦‚@Aspectï¼Œ@Beforeï¼Œ@After -->
 	<aop:aspectj-autoproxy />
 	
-	//·â×°¹²Í¬´¦ÀíµÄ×é¼þ
-	@Component//É¨Ãè£¬µÈ¼ÛÓÚ<bean>¶¨Òå
-	@Aspect//µÈ¼ÛÓÚ<aop:aspect> ¶¨Òå
+	//å°è£…å…±åŒå¤„ç†çš„ç»„ä»¶
+	@Component//æ‰«æï¼Œç­‰ä»·äºŽ<bean>å®šä¹‰
+	@Aspect//ç­‰ä»·äºŽ<aop:aspect> å®šä¹‰
 	public class Bean{
-		//µÈ¼ÛÓÚ<aop:before>¶¨Òå
-		//ÔÚÄ¿±ê·½·¨Ö´ÐÐÇ°£¬ÏÈÖ´ÐÐ¸Ã·½·¨
+		//ç­‰ä»·äºŽ<aop:before>å®šä¹‰
+		//åœ¨ç›®æ ‡æ–¹æ³•æ‰§è¡Œå‰ï¼Œå…ˆæ‰§è¡Œè¯¥æ–¹æ³•
 		@Before("within()")
 	}
 	
-### ÇÐÈëµã
+### åˆ‡å…¥ç‚¹
 
-ÓÃÓÚÖ¸¶¨Ä¿±ê×é¼þ¼°·½·¨¡£SpringÌá¹©ÁË¼¸ÖÖÇÐÈë±í´ïÊ½
+ç”¨äºŽæŒ‡å®šç›®æ ‡ç»„ä»¶åŠæ–¹æ³•ã€‚Springæä¾›äº†å‡ ç§åˆ‡å…¥è¡¨è¾¾å¼
 
-- ·½·¨ÏÞ¶¨±í´ïÊ½
+- æ–¹æ³•é™å®šè¡¨è¾¾å¼
 
-	¿ÉÒÔÖ¸¶¨Ä³¸ö×é¼þÖÐ²¿·Ö·½·¨×·¼Ó¹²Í¬·½·¨¹¦ÄÜ
-	execution£¨ÐÞÊÎ·û£¿·µ»ØÀàÐÍ	·½·¨Ãû	Å×³öÒì³££©
+	å¯ä»¥æŒ‡å®šæŸä¸ªç»„ä»¶ä¸­éƒ¨åˆ†æ–¹æ³•è¿½åŠ å…±åŒæ–¹æ³•åŠŸèƒ½
+	executionï¼ˆä¿®é¥°ç¬¦ï¼Ÿè¿”å›žç±»åž‹	æ–¹æ³•å	æŠ›å‡ºå¼‚å¸¸ï¼‰
 
